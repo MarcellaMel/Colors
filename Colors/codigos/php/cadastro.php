@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <!-- Required meta tags -->
@@ -9,15 +9,14 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/ColorsStyle.css">
+  <link rel="stylesheet" href="C:\Users\0057140\Downloads\tcc-heloa-marcela-main\tcc-heloa-marcela-main\codigos\css\ColorsStyle.css">
   <title>Cadastro</title>
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
-      <img src="../../Imagem/logocabeçalho.png" width="60" height="50" class="d-inline-block align-top" alt="">
+      <img src="../Imagem/logocabeçalho.png" width="60" height="50" class="d-inline-block align-top" alt="">
     </a>
     <form class="form-inline  ">
       <input class="form-control mr-sm-2" type="Pesquisar" placeholder="Pesquisar" aria-label="Pesquisar">
@@ -40,10 +39,11 @@
       </ul>
 
     </div>
-  </nav>
-  <!-- iniciou o box-->
+  </nav>    
 
-  <section class="h-100 gradient-form" style="background-color: #ffffff;">
+    <!-- iniciou o box-->
+
+   <section class="h-100 gradient-form" style="background-color: #ffffff;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
@@ -52,68 +52,59 @@
               <div class="col-lg-6">
                 <div class="card-body p-md-5 card-pricipal" style="background-color: rgb(241, 234, 226);">
 
-                  <div class="text-center">
-                    <img src="../../Imagem/" style="width: 185px;" alt="logo">
+      
+                <div class="text-center">
+                    <img src="../Imagem/" style="width: 185px;" alt="logo">
                     <h4 class="mt-1 mb-5 pb-1" style="color: rgb(139, 85, 48);"></h4>
                   </div>
-
-                  <form action="inserirUser.php" method="post"> 
-                    <div class="formCadastro">
-                      <label class="form-label" for="nomeUser">Nome</label>
-                      <input type="text" id="nomeUser" name="nomeUser" class="form-control" />
-                    </div>
-
-                    <div class="formCadastro">
-                      <label class="form-label" for="sobrenomeUser">Sobrenome</label>
-                      <input type="text" id="sobrenomeUser" name="sobrenomeUser" class="form-control" />
-                    </div>
-
-
-
-                    <div class="formCadastro">
-                      <label class="form-label" for="telUser">Telefone</label>
-                      <input type="text" id="telUser" name="telUser" class="form-control" />
-                    </div>
-
-                    <div class="formCadastro">
-                      <label class="form-label" for="nascimentoUser">Data de nascimento</label>
-                      <input type="date" id="nascimentoUser" name="nascimentoUser" class="form-control" />
-                    </div>
-                    <div class="formCadastro">
-                      <label class="form-label" for="generoUser">Gênero</label><br>
-                      <input type="radio" id="Fem" name="Genero" value="Fem">
-                      <label for="Fem">Feminino</label>
-                      <input type="radio" id="masc" name="Genero" value="masc">
-                      <label for="masc">Masculino</label>
-                      <input type="radio" id="pnd" name="Genero" value="pnd">
-                      <label for="pnd">Prefiro não dizer</label>
-                    </div>
-
-                  </form>
-
+        <form action="processa_cadastro.php" method="post">
+            <div class="form-group row">
+                <label for="nomeUser">Nome </label>
+                <input type="text" class="form-control" name="nomeUser" required placeholder="Digite seu nome">
                 </div>
-              </div>
-              <form></form>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <div class="form-group row">
+                <label for="sobrenomeUser">sobrenome </label>
+                    <input type="text" class="form-control" name="sobrenomeUser" required placeholder="Digite seu sobrenome">
+                </div>
 
-                  <div class="formCadastro">
-                    <label class="form-label" for="emailUser">Email</label>
-                    <input type="email" id="emailUser" name="emailUser" class="form-control" />
-                  </div>
+            <div class="formCadastro">
+                <label  for="telUser">Telefone </label>
+                    <input type="number" class="form-control" name="telUser" required placeholder="Digite seu telefone">
+                </div>
 
-                  <div class="formCadastro">
-                    <label class="form-label" for="senhaUser">Senha</label>
-                    <input type="password" id="senhaUser" name="senhaUser" class="form-control" />
-                  </div>
+            <div class="formCadastro">
+                <label for="emailUser">Email  </label>
+                    <input type="text" class="form-control" name="emailUser" required placeholder="Digite seu email">
+                </div>
 
-                  <div class="formCadastro">
-                    <label class="form-label" for="txtConfSenha">Cofirmar senha</label>
-                    <input type="password" id="txtConfSenha" class="form-control" />
-                  </div>
+            <div class="form-group row">
+                <label for="senhaUser">Senha </label>
+                    <input type="password" class="form-control" name="senhaUser" required placeholder="Digite sua senha">
+                </div>
 
-                  <p style="text-align: center;">
-                    <input type="submit" href="quizz.html" target="_self" class="entrar"><img src="../../Imagem/buttonCadas.png"></a><br><br>
+            <div class="form-group row">
+                <label for="nascimentoUser">Nascimento </label>
+                    <input type="number" class="form-control" name="nascimentoUser" required placeholder="Digite sua data de nascimento">
+                </div>
+
+                <div class="form-group row">
+                Sexo 
+                    <label class="form-group row for=radioSexo"> 
+                        <input class="btn tn-primary" type="radio" name="generoUser" value="F"> </input>Feminino  <br>
+                        <input class="btn tn-primary" type="radio" name="generoUser" value="M"> </input>Masculino <br>
+                        <input class="btn tn-primary" type="radio" name="generoUser" value="O"> </input>Prefiro não dizer <br>
+                    </div>              
+                    </form>
+
+</div>
+</div>
+<form></form>
+<div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+
+<p style="text-align: center;">
+                    <href="quizz.html"  ><img src="../Imagem/buttonCadas.png"></a><br><br>
+                    
                     <a href="login.html" title="login" style="color: rgb(190, 115, 65);">Já tenho uma conta</a>
 
                 </div>
@@ -126,9 +117,27 @@
     </div>
     </div>
   </section>
+
+
+            <div class="text-right">
+                <input class="btn btn-primary" type="submit" name="btnSalvar" value="Salvar" href="quizz.html"  ><img src="../Imagem/buttonCadas.png"></a><br><br>
+                <a href="login.html" title="login" style="color: rgb(190, 115, 65);">Já tenho uma conta</a>
+
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
   <!-- cabou cadastro-->
 
-    <footer class="main_footer">
+  <footer class="main_footer">
     <div class="content">
       <div class="colfooter">
         <h3 class="titleFooter"> Menu</h3>
@@ -151,10 +160,10 @@
       <div class="colfooter">
         <h3 class="titleFooter"> Redes Sociais</h3>
         <div>
-          <a href="https://www.instagram.com/co.colors_/" target="_blank" class="botao"><img src="../../Imagem/instagram (3).png"></a>
-          <a href="#" class="botao"><img src="../../Imagem/linkedin.png"></a>
-          <a href="#" class="botao"><img src="../../Imagem/youtube.png"></a>
-          <a href="#" class="botao"><img src="../../Imagem/tiktok (1).png"></a>
+          <a href="https://www.instagram.com/co.colors_/" target="_blank" class="botao"><img src="../Imagem/instagram (3).png"></a>
+          <a href="#" class="botao"><img src="../Imagem/linkedin.png"></a>
+          <a href="#" class="botao"><img src="../Imagem/youtube.png"></a>
+          <a href="#" class="botao"><img src="../Imagem/tiktok (1).png"></a>
         </div>
 
       </div><!--Col Footer 3-->
