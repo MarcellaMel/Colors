@@ -59,8 +59,15 @@
         <td><?php echo $exibir["generoUser"] ?></td>
         <td><?php echo $exibir["idUser"] ?></td>
         <td><?php echo $exibir["emailUser"] ?></td>
-        <td><a href = "#"> Editar </td>
-        <td><a href = "#"> excluir </td>
+        <td><a href = "#"> Editar</a></td>
+
+        <td><a href = "#" onclick="confirmarExclusao(
+            '<?php echo $exibir["idUser"] ?>',
+            '<?php echo $exibir["nomeUser"] ?>',
+            '<?php echo $exibir["sobrenomeUser"] ?>')">Excluir</a>
+        </td>
+
+
         <?php
             
             ?>
@@ -71,7 +78,14 @@
     <?php
     }
     ?>  
-
-
 </body>
+    <script>
+        function confirmarExclusao(idUser, nomeUser, sobrenomeUser){
+            if (window.confirm("Deseja realmente excluir o registro: \n" + idUser + " - " + nomeUser + " " + sobrenomeUser)){
+                window.location = "excluirPessoa.php?idUser=" + idUser;
+            }
+        }
+    </script>
+
+
 </html>
