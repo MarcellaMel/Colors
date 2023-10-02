@@ -59,16 +59,15 @@
         <td><?php echo $exibir["generoUser"] ?></td>
         <td><?php echo $exibir["idUser"] ?></td>
         <td><?php echo $exibir["emailUser"] ?></td>
+        <td><a href = "#"> Editar </td>
+        <td><a href = "#"> excluir </td>
         <?php
             
             ?>
-            
             <?php
             }
             ?>
-
         </table>
-
     <?php
     }
     ?>  
