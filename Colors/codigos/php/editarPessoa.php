@@ -1,9 +1,46 @@
 <?php
     include_once("conexao.php");
+
+    if(isset($_POST["nomeUser"])){
+        $idUser = $_GET ["idUser"];
+        $nome = $_POST["nomeUser"];
+        $sobrenome = $_POST["sobrenomeUser"];
+        $email = $_POST["emailUser"];
+        $senha = $_POST["senhaUser"];
+        $telefone = $_POST["telUser"];
+        $nascimento = $_POST["nascimentoUser"];
+
+        $sql = "UPDATE usuario
+        SET nomeUser = '$nome',
+        sobrenomeUser = '$sobrenome',
+        emailUser = '$email',
+        senhaUser = '$senha',
+        telUser = '$telefone',
+        nascimentoUser = '$nascimento'
+        WHERE idUser = '$idUser'";
+
+        if($conn->query($sql) === TRUE){
+            ?>
+            <script>
+                alert ("Registro atualizado com sucesso! ");
+                window.location = "editarPessoa.php";
+                </script>
+                <?php 
+        }
+        else{
+            ?>
+            <script>
+                alert ("Não foi possivel atualizar o registro :(");
+                window.history.back();
+                </script>
+                   <?php 
+        }
+    }
+
     ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -58,17 +95,17 @@
                                             $idUser = $_GET["idUser"];
                                             $sql = "SELECT * from usuario where idUser = $idUser";
                                             $consulta = $conn->query($sql);
-                                            $pessoa = $consulta->fetch_assoc();
+                                            $usuario = $consulta->fetch_assoc();
                                         }
                                     ?>
 
 
 
-                                    <form action="processa_cadastro.php" method="post">
+                                    <form action="editarPessoa.php?idUser=<php? echo $_GET['idUser]?>" method="post">
                                         <div class="form-outline mb-4">
                                             <label for="nomeUser">Nome
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="nomeUser" value="<?php echo $pessoa["nomeUser"]?>" required
+                                                    <input type="text" class="form-control" name="nomeUser" value="<?php echo $usuario["nomeUser"]?>" required
                                                         placeholder="Digite seu nome">
                                                 </div>
                                         </div>
@@ -76,7 +113,7 @@
                                         <div class="form-group row">
                                             <label for="sobrenomeUser">Sobrenome
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="sobrenomeUser" value="<?php echo $pessoa["sobrenomeUser"]?>"
+                                                    <input type="text" class="form-control" name="sobrenomeUser" value="<?php echo $usuario["sobrenomeUser"]?>"
                                                         required placeholder="Digite seu sobrenome">
                                                 </div>
                                         </div>
@@ -84,7 +121,7 @@
                                         <div class="form-group row">
                                             <label for="telUser">Telefone
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="telUser" value="<?php echo $pessoa["telUser"]?>" required
+                                                    <input type="text" class="form-control" name="telUser" value="<?php echo $usuario["telUser"]?>" required
                                                         placeholder="Digite seu telefone">
                                                 </div>
                                         </div>
@@ -92,20 +129,12 @@
                                         <div class="form-group row">
                                             <label for="nascimentoUser">Nascimento
                                                 <div class="col-sm-10">
-                                                    <input type="number" class="form-control" name="nascimentoUser" value="<?php echo $pessoa["nascimentoUser"]?>"
+                                                    <input type="number" class="form-control" name="nascimentoUser" value="<?php echo $usuario["nascimentoUser"]?>"
                                                         required placeholder="Digite sua data de nascimento">
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <label for="generoUser">Sexo
-                                                        <div class="col-sm-10">
-                                                            <input class="btn tn-primary" type="radio" name="generoUser"
-                                                                value="1">Feminino
-                                                            <input class="btn tn-primary" type="radio" name="generoUser"
-                                                                value="2">Masculino
-                                                            <input class="btn tn-primary" type="radio" name="generoUser"
-                                                                value="0">Prefiro não dizer
-                                                        </div>
+                                                
+                                            
                                     </form>
 
                                 </div>
@@ -117,7 +146,7 @@
                                     <div class="form-group row">
                                         <label for="emailUser">Email
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="emailUser" required
+                                                <input type="text" class="form-control" name="emailUser" value="<?php echo $usuario["emailUser"]?>" required
                                                     placeholder="Digite seu email">
                                             </div>
                                     </div>
@@ -125,7 +154,7 @@
                                     <div class="form-group row">
                                         <label for="senhaUser">Senha
                                             <div class="col-sm-10">
-                                                <input type="password" class="form-control" name="senhaUser" required
+                                                <input type="password" class="form-control" name="senhaUser" value="<?php echo $usuario["senhaUser"]?>" required
                                                     placeholder="Digite sua senha">
                                             </div>
                                     </div>
