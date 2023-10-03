@@ -59,7 +59,7 @@
         <td><?php echo $exibir["generoUser"] ?></td>
         <td><?php echo $exibir["idUser"] ?></td>
         <td><?php echo $exibir["emailUser"] ?></td>
-        <td><a href = "#"> Editar</a></td>
+        <td><a href = "editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>"> Editar</a></td>
 
         <td><a href = "#" onclick="confirmarExclusao(
             '<?php echo $exibir["idUser"] ?>',
