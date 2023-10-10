@@ -17,28 +17,53 @@
             <div class="cabeçalho">
                 <span class="voltar"><img src="../../Imagem/angulo-esquerdo.png" alt=""></span>
                 <h3>Live Chat</h3>
+                <main>
                 <span class="fechar"><img src="../../Imagem/cruz.png" alt=""></span>
             </div>
+            <span class="question"></span>
+            <div class="answers"></div>
+            <div class="finish"></div>
+        </main>
+
+        <script>
+        function functionSkinCare (){
+            document.getElementById("divTotal").innerHTML =
+            "<label for='SkinCare'>"+texto+"</label> ";
+        }
+        </script>
+        
+        <script>
+            function functionCamuflagem (){
+                alert("Eu sou um alert!");
+            }
+            </script>
+
+            <script>
+                function functionBase (){
+                    alert("Eu sou um alert!");
+                }
+                </script>
+        
+        
 
             <div class="chat">
                 <div class="bot">
-                    <img src="../../Imagem/Cora.jpeg" alt="msdmsdm" class="perfil">
+                    <img src="../../Imagem/Cora.jpeg" alt="" class="perfil">
                     <div class="text-area">
-                        <span class="text">Qual é o seu tipo de pele</span>
+                        <span class="text">Oii! Eu me chamo Cora e vou te ajudar durante seu atendimento, o que você procura?</span>
                     </div>
                 </div>
                 <div class="usuario">
-                    <img src="../../Imagem/userlog.png" alt="jsnn" class="perfil">
-                    <div class="text-area">
-                        <span class="text"></span>
+                    <img src="../../Imagem/Usuario.jpeg" alt="jsnn" class="perfil">
+                    <div class="text-area", id="divTotal">
+                        <label for=""></label>
                     </div>
                 </div>
             </div>
             <div class="respostas">
-                <span onclick="" class="opcoes">seca</span>
-                <span onclick="" class="opcoes">mista</span>
-                <span onclick="" class="opcoes">oleosa</span>
-                <span onclick="" class="opcoes">a</span>
+                <span onclick="functionSkinCare()" class="opcoes">Skin care</span>
+                <span onclick="functionCamuflagem()" class="opcoes">Camuflagem</span>
+                <span onclick="functionBase()" class="opcoes">Base</span>
 
             </div>
     </section>
