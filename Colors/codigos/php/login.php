@@ -1,27 +1,21 @@
 <?php
-    //validar login
-    
-    require_once("conexao.php"); //inclui o arquivo de conexao
-    session_start(); //starta a session
-    //recebendo usuario e senha vindo do login
-    $email = $conn->real_escape_string($_POST["emailUser"]);
-    $senha = md5($_POST["senhaUser"]);
+include_once("conexao.php");
 
-    $sql = "SELECT * from usuario where emailUser = '$email' and senhaUser = '$senha'";
+// Recebe os dados do formulário
+$username = $_POST['emailUser'];
+$password = $_POST['senhaUser'];
 
-    //echo $sql;
+// Consulta SQL para verificar o login
+$sql = "SELECT * FROM usuario WHERE emailUser = '$username' AND senhaUser = '$password'";
+$result = $conn->query($sql);
 
-    $resultado = $conn->query($sql);
-
-if($resultado->num_rows > 0){
-    $dados_usuario = $resultado->fetch_assoc();
-    //preenchenr a session com os dados do usuario
-    $_SESSION["nome"] = $dados_usuario["nomeUser"];
-    $_SESSION["sobrenome"] = $dados_usuario["sobrenomeUser"];
-    header("location: selecionarPessoa.php");
-}else{
-    ?>
-    <script>window.history.back();</script>
-    <?php
+if ($result->num_rows == 1) {
+    // Login bem-sucedido
+    echo "Login bem-sucedido. Bem-vindo, $username!";
+} else {
+    // Login falhou
+    echo "Login falhou. Verifique suas credenciais.";
 }
+
+$conn->close();
 ?>
