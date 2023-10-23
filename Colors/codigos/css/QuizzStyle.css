@@ -58,6 +58,7 @@ div.cabeçalho span.fechar {
 div.chat {
     height: 80%;
     width: 100%;
+    overflow: auto;
 }
 
 div.bot {
