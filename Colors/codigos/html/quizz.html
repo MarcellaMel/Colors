@@ -14,6 +14,8 @@
 </html>
 
 
+
+
 <body>
     <section class="card">
         <div class="content">
@@ -24,29 +26,10 @@
                 <span class="fechar"><img src="../../Imagem/cruz.png" alt=""></span>
             </div>
 
-            <script>
-                function Pergunta1() {
-                    var SkinCare = document.getElementById("opSC");
-                    var Camuflagem = document.getElementById("opC");
-                    var Base = document.getElementById("opB");
+            <!--tag pai  -->
+            <div class="chat" id="chat">
 
-                    if (SkinCare.clicked == true) {
-                        document.getElementById('BuscaUser').innerHTML 
-                = 'Skin care'; 
-                    } else if (Camuflagem.clicked == true) {
-                        document.getElementById('BuscaUser').innerHTML 
-                = 'A'; 
-                    } else {
-                        document.getElementById('BuscaUser').innerHTML 
-                = 'A '; 
-                    };
-                };
-
-
-            </script>
-
-
-            <div class="chat">
+                <!-- primeira mensagem -->
                 <div class="bot">
                     <img src="../../Imagem/Cora.jpeg" alt="" class="perfil">
                     <div class="text-area">
@@ -54,20 +37,113 @@
                             procura?</span>
                     </div>
                 </div>
-                <div class="usuario">
-                    <img src="../../Imagem/Usuario.jpeg" alt="" class="perfil">
-                    <div class="text-area" , id="divTotal">
-                        <label id="BuscaUser"></label>
-                    </div>
-                </div>
-            </div>
-            <div class="respostas">
-                <span onclick="Pergunta1()" class="opcoes" id="opSC">Skin care</span>
-                <span onclick="functionCamuflagem()" class="opcoes" id="opC">Camuflagem</span>
-                <span onclick="functionBase()" class="opcoes" id="opB">Base</span>
+
+                <!-- inserir aqui -->
 
             </div>
+            <div class="respostas" id="opcoes">
+                <span onclick="clicou('Skin Care')" class="opcoes" value="Skin Care">Skin care</span>
+                <span onclick="clicou('Camuflagem')" class="opcoes" value="Camuflagem">Camuflagem</span>
+                <span onclick="clicou('Base')" class="opcoes" value="Base">Base</span>
+
+            </div>
+        </div>
+
+
     </section>
+    <script>
+        const chat = document.getElementById('chat');
+        const opcoes = document.getElementById('opcoes');
+        let i = 0; //contador
+        //principal
+        function clicou(resposta) {
+            i++
+            chat.innerHTML += htmlUsuario(resposta)
+            chat.innerHTML += i < 5 ? htmlBot(respostasBot()) : htmlBotimg()
+            opcoes.innerHTML = i < 5 ? htmlOpcoes(listasOpcoes()) : htmlOpcoesImg()
+
+        }
+
+        //ordem de respostas do bot
+        function respostasBot() {
+            const respostas = {
+                1: "oi",
+                2: "ola",
+                3: "socorro",
+                4: "ultima pergunta"
+            }
+            //pula para a proxima resposta do objeto
+            return respostas[i]
+        }
+
+        //estrutura do html do dialogo do bot
+        function htmlBot(texto) {
+            return `<div class="bot">
+                        <img src="../../Imagem/Cora.jpeg" alt="" class="perfil">
+                        <div class="text-area">
+                            <span class="text">${texto}</span>
+                        </div>
+                    </div>`
+        }
+
+        function htmlBotimg() {
+            return `<div class="bot">
+                        <img src="../../Imagem/Cora.jpeg" alt="" class="perfil">
+                        <div class="text-area">
+                            <span class="text"> <img src="../../Imagem/Usuario.jpeg" alt="" class="perfil"></span>
+                        </div>
+                    </div>`
+        }
+        function listasOpcoes() {
+            const lista = {
+                1: ['laranja', 'pessego', 'feijao'],
+                2: ['beterraba', 'cenoura', 'pinhao'],
+                3: ['chupchup', 'pè de moleque'],
+                4: ['jabuticaba', 'banana']
+            }
+            return lista[i]
+        }
+
+        //estrutura do html do dialogo do usuario
+        function htmlUsuario(texto) {
+            return `<div class="usuario">
+                        <img src="../../Imagem/Usuario.jpeg" alt="" class="perfil">
+                        <div class="text-area">
+                            <span class="text">${texto}</span>
+                        </div>
+                    </div>`
+        }
+
+        function htmlOpcoes(opcao) {
+            return i < 3 ? `<span onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
+            <span onclick="clicou('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>
+            <span onclick="clicou('${opcao[2]}')" class="opcoes" value="${opcao[2]}">${opcao[2]}</span>` : `<span onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
+            <span onclick="clicou('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>`
+        }
+        function htmlOpcoesImg() {
+            return `<span  class="opcoes" ><a href="http://">coloca o link aqui</a></span>`
+        }
+
+        //scroll do chat
+        const emulatedScreen = document.querySelector('.chat');
+
+        // Função para rolar a tela para baixo
+        function scrollScreenDown() {
+            emulatedScreen.scrollTop += 1000; // Ajuste o valor conforme necessário
+        }
+
+        // Observa as mudanças no conteúdo usando MutationObserver
+        const observer = new MutationObserver((mutationsList, observer) => {
+            // Rola a tela para baixo sempre que ocorrer uma mutação (adicionar elemento)
+            scrollScreenDown();
+        });
+
+        // Opções para observar mudanças na estrutura do DOM
+        const observerOptions = { childList: true, subtree: true };
+
+        // Inicia a observação na tela de emulação
+        observer.observe(emulatedScreen, observerOptions);
+    </script>
 </body>
 
 </html>
