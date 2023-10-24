@@ -42,9 +42,9 @@
 
             </div>
             <div class="respostas" id="opcoes">
-                <span onclick="clicou('Skin Care')" class="opcoes" value="Skin Care">Skin care</span>
-                <span onclick="clicou('Camuflagem')" class="opcoes" value="Camuflagem">Camuflagem</span>
-                <span onclick="clicou('Base')" class="opcoes" value="Base">Base</span>
+                <span onclick="clicouskin('Skin Care')" class="opcoes" value="Skin Care">Skin care</span>
+                <span onclick="clicoucamuflagem('Camuflagem')" class="opcoes" value="Camuflagem">Camuflagem</span>
+                <span onclick="clicoubase('Base')" class="opcoes" value="Base">Base</span>
 
             </div>
         </div>
@@ -56,21 +56,46 @@
         const opcoes = document.getElementById('opcoes');
         let i = 0; //contador
         //principal
-        function clicou(resposta) {
+        function clicouskin(resposta) {
             i++
             chat.innerHTML += htmlUsuario(resposta)
-            chat.innerHTML += i < 5 ? htmlBot(respostasBot()) : htmlBotimg()
-            opcoes.innerHTML = i < 5 ? htmlOpcoes(listasOpcoes()) : htmlOpcoesImg()
+            chat.innerHTML += i < 2 ? htmlBot(respostasBotskin()) : htmlBotimg()
+            opcoes.innerHTML = i < 2 ? htmlOpcoesskin(listasOpcoesskin()) : htmlOpcoesImg()
+
+        }
+        function clicoucamuflagem(resposta) {
+            i++
+            chat.innerHTML += htmlUsuario(resposta)
+            chat.innerHTML += i < 2 ? htmlBot(respostasBotcamuflagem()) : htmlBotimg()
+            opcoes.innerHTML = i < 2 ? htmlOpcoescamuflagem(listasOpcoescamuflagem()) : htmlOpcoesImg()
+
+        }
+        function clicoubase(resposta) {
+            i++
+            chat.innerHTML += htmlUsuario(resposta)
+            chat.innerHTML += i < 2 ? htmlBot(respostasBotbase()) : window.open("http://localhost/Colors/codigos/html/Camera.html");
+            opcoes.innerHTML = i < 2 ? htmlOpcoesbase(listasOpcoesbase()) : htmlOpcoesImg()
 
         }
 
         //ordem de respostas do bot
-        function respostasBot() {
+        function respostasBotskin() {
             const respostas = {
-                1: "oi",
-                2: "ola",
-                3: "socorro",
-                4: "ultima pergunta"
+                1: "Qual é seu tipo de pele?"
+            }
+            //pula para a proxima resposta do objeto
+            return respostas[i]
+        }
+        function respostasBotcamuflagem() {
+            const respostas = {
+                1: "Qual tipo de mancha é predominante no seu rosto?"
+            }
+            //pula para a proxima resposta do objeto
+            return respostas[i]
+        }
+        function respostasBotbase() {
+            const respostas = {
+                1: "Entendi! Você pode experimentar seu tom ideal de base no nosso espelho virtual, para isso você permite o acesso a sua câmera?"
             }
             //pula para a proxima resposta do objeto
             return respostas[i]
@@ -94,12 +119,21 @@
                         </div>
                     </div>`
         }
-        function listasOpcoes() {
+        function listasOpcoesskin() {
             const lista = {
-                1: ['laranja', 'pessego', 'feijao'],
-                2: ['beterraba', 'cenoura', 'pinhao'],
-                3: ['chupchup', 'pè de moleque'],
-                4: ['jabuticaba', 'banana']
+                1: ['Seca', 'Mista', 'Oleosa']
+            }
+            return lista[i]
+        }
+        function listasOpcoescamuflagem() {
+            const lista = {
+                1: ['Vermelhas', 'Arroxeadas', 'Azuladas']
+            }
+            return lista[i]
+        }
+        function listasOpcoesbase() {
+            const lista = {
+                1: ['Permitir', 'Voltar para o início']
             }
             return lista[i]
         }
@@ -114,14 +148,24 @@
                     </div>`
         }
 
-        function htmlOpcoes(opcao) {
-            return i < 3 ? `<span onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
-            <span onclick="clicou('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>
-            <span onclick="clicou('${opcao[2]}')" class="opcoes" value="${opcao[2]}">${opcao[2]}</span>` : `<span onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
-            <span onclick="clicou('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>`
+        function htmlOpcoesskin(opcao) {
+            return i < 3 ? `<span onclick="clicouskin('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
+            <span onclick="clicouskin('${opcao[1]}')" class="opcoes" value="${opcao[2]}">${opcao[1]}</span>
+            <span onclick="clicouskin('${opcao[2]}')" class="opcoes" value="${opcao[2]}">${opcao[2]}</span>` : `<span onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
+            <span onclick="clicouskin('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>`
+        }
+        function htmlOpcoescamuflagem(opcao) {
+            return i < 3 ? `<span onclick="clicoucamuflagem('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
+            <span onclick="clicoucamuflagem('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>
+            <span onclick="clicoucamuflagem('${opcao[2]}')" class="opcoes" value="${opcao[2]}">${opcao[2]}</span>` : `<span onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
+            <span onclick="clicoucamuflagem('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>`
+        }
+        function htmlOpcoesbase(opcao) {
+            return i < 3 ? `<span onclick="clicoubase('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</span>
+            <span onclick="clicoubase('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>` : `<span onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}"`
         }
         function htmlOpcoesImg() {
-            return `<span  class="opcoes" ><a href="http://">coloca o link aqui</a></span>`
+            return `<span  class="opcoes" ><a href="http://">Ver mais sobre o produto...</a></span>`
         }
 
         //scroll do chat
