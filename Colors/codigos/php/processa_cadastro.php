@@ -10,17 +10,31 @@
   $telefone = $_POST["telUser"];
   $nascimento = $_POST["nascimentoUser"];
   $gen = $_POST["generoUser"];
+  
 
   //echo $nome;
 
 //inserir os dados no banco de dados
-  $sql = "INSERT INTO usuario (nomeUser, sobrenomeUser, emailUser, senhaUser, telUser, nascimentoUser, generoUser) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$telefone', '$nascimento', '$gen')";
 
-  if($conn->query($sql) === TRUE){
-    echo "Dados inseridos com sucesso!";
-  } else {
-    echo "Erro ao inserir dados: " . $conn->error;
-  }
+                        $result = $conn->query("SELECT COUNT(*) FROM usuario WHERE emailUser = '{$email}'");
+                        $row = $result->fetch_row();
+                       
+                        if ($row[0] > 0) {
+                          echo  "<script> alert('email já cadastrado, tente novamente');</script>";
+                          
+                        } else {
+                          $sql = "INSERT INTO usuario (nomeUser, sobrenomeUser, emailUser, senhaUser, telUser, nascimentoUser, generoUser) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$telefone', '$nascimento', '$gen')";
 
+                          if($conn->query($sql) === TRUE){
+                            alert ("Dados inseridos com sucesso!");
+                           
+                          } else {
+                            alert ( "Erro ao inserir dados: " . $conn->error);
+                           
+                          }
+                        
+                        }
+                        
+ 
   $conn->close();
   ?>
