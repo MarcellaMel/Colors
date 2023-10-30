@@ -108,9 +108,13 @@
                                     placeholder="Digite sua senha">
                             </div>
                     </div>
+                   
                     <div class="enviar text-right">
                         <input class="btn btn-light" type="submit" name="btnSalvar" value="Salvar" style="background-color: rgb(241, 234, 226); color: rgb(190, 115, 65); border-radius: 12px;"><br><br>
+                        
 
+                            </script>
+                        <a href = "../inicio.html">
 
                     </div>
                     <div class="enviar text-right">
