@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/ColorsStyle.css">
-    <title>Login</title>
+    <title>Perfil </title>
 </head>
 
 <body>
@@ -32,11 +32,10 @@
             <div class="mr-auto"></div>
             <ul class="navbar-nav my-2 my-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="inicio.html" style="color: rgb(190, 115, 65)">Início<span
+                    <a class="nav-link" href="inicioUser.html" style="color: rgb(190, 115, 65)">Início<span
                             class="sr-only">(current)</span></a>
 
                 </li>
-
             </ul>
 
         </div>
@@ -65,27 +64,27 @@
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="txtEmail">Alterar Email</label>
-                                            <a href="editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>" target="_blank" class="botao"><img src="../../Imagem/editar.png" width="12" height="12"></a> 
+                                            <a href="editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>" target="_blank" class="botao"><img src="../../Imagem/editarInfo.png" width="12" height="12"></a> 
 
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label">Alterar Celular</label>
-                                            <a href="editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>" target="_blank" class="botao"><img src="../../Imagem/editar.png"
+                                            <a href="editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>" target="_blank" class="botao"><img src="../../Imagem/editarInfo.png"
                                                     width="12" height="12"></a>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label">Alterar Senha </label>
                                             <a href="..\ems.php" target="_blank" class="botao"><img
-                                                    src="../../Imagem/editar.png" width="12" height="12"></a>
+                                                    src="../../Imagem/editarInfo.png" width="12" height="12"></a>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label">Meus itens salvos </label>
                                             <a href="#" target="_blank" class="botao"><img
-                                                    src="../../Imagem/linkExt.png" width="12" height="12"></a>
+                                                    src="../../Imagem/salvo.png" width="12" height="12"></a>
                                         </div>
                                         <label class="form-label">Sair </label>
-                                        <a href="..\html\inicio.html" target="_blank" class="botao"><img
+                                        <a href="..\html\inicioUser.php" target="_blank" class="botao"><img
                                                 src="../../Imagem/sair.png" width="12" height="12"></a>
                                 </div>
                                 <p style="text-align: center;">
