@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,6 +12,9 @@
 </head>
 
 </html>
+
+
+
 
 <body>
     <section class="card">
@@ -38,42 +42,41 @@
 
             </div>
             <div class="respostas" id="opcoes">
-                <button onclick="clicou('Skin Care')" class="opcoes" value="Skin Care" id="0">Skin care</button>
-                <button onclick="clicou('Camuflagem')" class="opcoes" value="Camuflagem" id="1">Camuflagem</button>
-                <button onclick="clicou('Base')" class="opcoes" value="Base" id="2">Base</button>
+                <button onclick="clicouSC('Skin Care')" class="opcoes" value="Skin Care">Skin care</button>
+                <button onclick="clicou('Camuflagem')" class="opcoes" value="Camuflagem">Camuflagem</button>
+                <button onclick="clicou('Base')" class="opcoes" value="Base">Base</span>
 
             </div>
         </div>
 
 
-    </section>
-    <script>
-        const chat = document.getElementById('chat');
-        const opcoes = document.getElementById('opcoes');
-        let i = 0; //contador
-        //principal
-        function clicou(resposta) {
-            i++;
-    const userChoice = resposta.toLowerCase(); // Convert the response to lowercase for case-insensitive comparison
+        <script>
+            const chat = document.getElementById('chat');
+            const opcoes = document.getElementById('opcoes');
 
-    chat.innerHTML += htmlUsuario(resposta);
+            let i = 0;
 
-    let botResponse;
-    if (userChoice === 'seca') {
-        botResponse = "Você tem pele seca. Experimente este produto: ";
-        htmlBotimg("../../Imagem/serumHidra.png");
-    } else if (userChoice === 'mista') {
-        botResponse = "Você tem pele mista. Experimente este produto: ";
-        htmlBotimg("../../Imagem/serumAnti.png");
-    } else if (userChoice === 'oleosa') {
-        botResponse = "Você tem pele oleosa. Experimente este produto: ";
-        htmlBotimg("../../Imagem/serumSeca.png");
-    }
+            function clicouSC(resposta) {
+            i++
+            const userChoice = resposta.toLowerCase();
 
-    chat.innerHTML += htmlBot(botResponse);
-    opcoes.innerHTML = i < 2 ? htmlOpcoes(listasOpcoes()) : htmlOpcoesImg();
-}
+            chat.innerHTML += htmlUsuario(resposta)
 
+                    let botResponse;
+            if (userChoice === 'seca') {
+                botResponse = "Experimente este produto: ";
+                htmlBotimg("../../Imagem/serumHidra.png");
+            } else if (userChoice === 'mista') {
+                botResponse = "Você tem pele mista. Experimente este produto: ";
+                htmlBotimg("../../Imagem/serumAnti.png");
+            } else if (userChoice === 'oleosa') {
+                botResponse = "Você tem pele oleosa. Experimente este produto: ";
+                htmlBotimg("../../Imagem/serumSeca.png");
+            }
+            chat.innerHTML += i < 2 ? htmlBot(respostasBot()) : htmlBot(botResponse) ; 
+            opcoes.innerHTML = i < 2 ? htmlOpcoes(listasOpcoes()) : htmlOpcoesImg();
+
+        }
         //ordem de respostas do bot
         function respostasBot() {
             const respostas = {
@@ -81,10 +84,7 @@
             }
             //pula para a proxima resposta do objeto
             return respostas[i]
-        }
-
-        //estrutura do html do dialogo do bot
-        function htmlBot(texto) {
+        }function htmlBot(texto) {
             return `<div class="bot">
                         <img src="../../Imagem/Cora.jpeg" alt="" class="perfil">
                         <div class="text-area">
@@ -92,7 +92,7 @@
                         </div>
                     </div>`
         }
-                function htmlBotimg(imageSrc) {
+        function htmlBotimg(imageSrc) {
             return `<div class="bot">
                 <img src="../../Imagem/Cora.jpeg" alt="" class="perfil">
                 <div class="text-area">
@@ -106,8 +106,6 @@
             }
             return lista[i]
         }
-
-        //estrutura do html do dialogo do usuario
         function htmlUsuario(texto) {
             return `<div class="usuario">
                         <img src="../../Imagem/Usuario.jpeg" alt="" class="perfil">
@@ -116,37 +114,37 @@
                         </div>
                     </div>`
         }
-
         function htmlOpcoes(opcao) {
-            return i < 3 ? `<button onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</button>
-            <button onclick="clicou('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</button>
-            <button onclick="clicou('${opcao[2]}')" class="opcoes" value="${opcao[2]}">${opcao[2]}</button>` : `<button onclick="clicou('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</button>
-            <button onclick="clicou('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</button>`
+            return i < 3 ? `<button onclick="clicouSC('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</button>
+            <button onclick="clicouSC('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</button>
+            <button onclick="clicouSC('${opcao[2]}')" class="opcoes" value="${opcao[2]}">${opcao[2]}</button>` : `<button onclick="clicouSC('${opcao[0]}')" class="opcoes" value="${opcao[0]}">${opcao[0]}</button>
+            <button onclick="clicouSC('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</button>`
         }
         function htmlOpcoesImg() {
-            return `<button  class="opcoes" ><a href="http://">coloca o link aqui</a></button>`
+            return `<button  class="opcoes" ><a href="https://www.rubyrosemaquiagem.com.br/produto/3159-gel-creme-facial-antioxidante-kiwi-rr5600-melu">Ver mais sobre o produto</a></button>`
         }
 
-        //scroll do chat
-        const emulatedScreen = document.querySelector('.chat');
-
-        // Função para rolar a tela para baixo
-        function scrollScreenDown() {
-            emulatedScreen.scrollTop += 1000; // Ajuste o valor conforme necessário
-        }
-
-        // Observa as mudanças no conteúdo usando MutationObserver
-        const observer = new MutationObserver((mutationsList, observer) => {
-            // Rola a tela para baixo sempre que ocorrer uma mutação (adicionar elemento)
-            scrollScreenDown();
-        });
-
-        // Opções para observar mudanças na estrutura do DOM
-        const observerOptions = { childList: true, subtree: true };
-
-        // Inicia a observação na tela de emulação
-        observer.observe(emulatedScreen, observerOptions);
-    </script>
-</body>
-
-</html>
+            
+            //scroll do chat
+            const emulatedScreen = document.querySelector('.chat');
+    
+            // Função para rolar a tela para baixo
+            function scrollScreenDown() {
+                emulatedScreen.scrollTop += 1000; // Ajuste o valor conforme necessário
+            }
+    
+            // Observa as mudanças no conteúdo usando MutationObserver
+            const observer = new MutationObserver((mutationsList, observer) => {
+                // Rola a tela para baixo sempre que ocorrer uma mutação (adicionar elemento)
+                scrollScreenDown();
+            });
+    
+            // Opções para observar mudanças na estrutura do DOM
+            const observerOptions = { childList: true, subtree: true };
+    
+            // Inicia a observação na tela de emulação
+            observer.observe(emulatedScreen, observerOptions);
+        </script>
+    </body>
+    
+    </html>
