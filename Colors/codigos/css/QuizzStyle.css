@@ -104,11 +104,14 @@ div.respostas {
     z-index: 1;
 }
 
-span.opcoes {
+ .opcoes {
     padding: 1em 1.5em 1em 1.5em;
     border: solid 1px;
     border-radius: 50px;
     cursor: pointer ;
+    background-color:  #e4d7d7; 
+    color: rgb(190, 115, 65); 
+    
 }
 span.opcoes:hover {
     
