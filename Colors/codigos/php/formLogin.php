@@ -40,7 +40,11 @@
 <div class="text-center">
 <form action="login.php" method="post">
 <!-- lado B  -->
-<fieldset class="ladoB">
+<fieldset class="ladoB" text-align:"center">
+    <br>
+    <br>
+<h2>Login</h2>
+<br>
                     <div class="form-outline mb-4">
                         <label for="nomeUser">Email</label>
                                 <input type="text" id="emailUser" class="form-control" name="emailUser" required
@@ -52,15 +56,19 @@
                                 <input type="password" id="senhaUser" class="form-control" name="senhaUser" required
                                     placeholder="Digite sua senha">
                     </div>
-                        <input class="btn btn-light" type="submit" name="btnSalvar" value="Login" style="background-color: rgb(241, 234, 226); color: rgb(190, 115, 65); border-radius: 12px;"><br><br>
+                    
+                    
+                        <input class="btn btn-light" type="submit" name="btnSalvar" value="Login" style="background-color: rgb(241, 234, 226); color: rgb(190, 115, 65); border-radius: 12px";><br><br>
+
+                        <br> <p>Inscreva-se para ficar por dentro de ofertas hiperlimitadas, lançamentos de produtos e dicas pessoais de beleza.</p>
 
                     <div class="enviar text-right">
-                        <a href="../html/login.html" title="Login" style="color: rgb(190, 115, 65);">Já tenho uma
-                            conta</a>
+                        <a href="cadastro.php" title="Login" style="color: rgb(190, 115, 65);">Quero fazer meu cadastro!</a><br>
                     </div>
+                   
                 </fieldset>
                
-    <h2>Login</h2>
+    
     </form>
 </div>
     <footer class="main_footer">
@@ -111,3 +119,4 @@
     </footer>
 </body>
 </html>
+
