@@ -20,7 +20,8 @@
                         $row = $result->fetch_row();
                        
                         if ($row[0] > 0) {
-                          echo  "<script> alert('email já cadastrado, tente novamente');</script>";
+                          echo  "<script> alert('Email já cadastrado, tente novamente com um outro email ou faça seu login');</script>";
+                          header("location: ../html/inicio.html");
                           
                         } else {
                           $sql = "INSERT INTO usuario (nomeUser, sobrenomeUser, emailUser, senhaUser, telUser, nascimentoUser, generoUser) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$telefone', '$nascimento', '$gen')";
