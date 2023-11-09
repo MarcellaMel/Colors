@@ -11,7 +11,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
     // Login bem-sucedido
-    echo "Login bem-sucedido. Bem-vindo, $username!";
+    header("location: quizz.html");
+    //echo "Login bem-sucedido. Bem-vindo, $username!";
 } else {
     // Login falhou
     echo "Login falhou. Verifique suas credenciais.";
