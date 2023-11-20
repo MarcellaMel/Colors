@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>Live chat</title>
 </head>
 
 </html>
@@ -20,10 +20,11 @@
     <section class="card">
         <div class="content">
             <div class="cabeçalho">
-                <span class="voltar"><img src="../../Imagem/angulo-esquerdo.png" alt=""></span>
+                <a href="../html/inicio.html" target="_blank" class="botao"><img src="../../Imagem/angulo-esquerdo.png"></a>
                 <h3>Live Chat</h3>
 
-                <span class="fechar"><img src="../../Imagem/cruz.png" alt=""></span>
+                
+                <a href="../html/inicio.html" target="_blank" class="fechar"><img src="../../Imagem/cruz.png"></a>
             </div>
 
             <!--tag pai  -->
@@ -43,7 +44,7 @@
             </div>
             <div class="respostas" id="opcoes">
                 <button onclick="clicouSC('Skin Care')" class="opcoes" value="Skin Care">Skin care</button>
-                <button onclick="clicou('Camuflagem')" class="opcoes" value="Camuflagem">Camuflagem</button>
+                <button onclick="clicouC('Camuflagem')" class="opcoes" value="Camuflagem">Camuflagem</button>
                 <button onclick="clicou('Base')" class="opcoes" value="Base">Base</span>
 
             </div>
@@ -53,6 +54,7 @@
         <script>
             const chat = document.getElementById('chat');
             const opcoes = document.getElementById('opcoes');
+            
 
             let i = 0;
 
@@ -64,13 +66,13 @@
 
                     let botResponse;
             if (userChoice === 'seca') {
-                botResponse = "Experimente este produto: ";
+                botResponse = "O Sérum Facial Nutritivo De Coco Melu é perfeito para peles secas como a sua, pois, possui ação nutritiva, relaxante, hidratante e reparadora contra os sinais de envelhecimento! Tudo isso em um só tubinho. Gostou? Então clique no botão abaixo para conferir ;) ";
                 htmlBotimg("../../Imagem/serumHidra.png");
             } else if (userChoice === 'mista') {
-                botResponse = "Você tem pele mista. Experimente este produto: ";
+                botResponse = "O Sérum Facial Hidratante De Pêssego é perfeito para peles mistas como a sua, pois, é composto por poderosos ativos que juntos possuem um alto poder hidratante, contém ácido hialurônico, vitamina E, aloe vera, algas marinhas e pantenol! Tudo isso em um só tubinho. Gostou? Então clique no botão abaixo para conferir ;)";
                 htmlBotimg("../../Imagem/serumAnti.png");
             } else if (userChoice === 'oleosa') {
-                botResponse = "Você tem pele oleosa. Experimente este produto: ";
+                botResponse = "O Sérum Facial Detox De Melancia Melu é perfeito para peles oleosas como a sua, pois, mantém o PH da sua pele equilibrado e protege contra futuras acnes! Tudo isso em um só tubinho. Gostou? Então clique no botão abaixo para conferir ;) ";
                 htmlBotimg("../../Imagem/serumSeca.png");
             }
             chat.innerHTML += i < 2 ? htmlBot(respostasBot()) : htmlBot(botResponse) ; 
@@ -102,7 +104,7 @@
         }
         function listasOpcoes() {
             const lista = {
-                1: ['seca', 'mista', 'oleosa'],
+                1: ['Seca', 'Mista', 'Oleosa'],
             }
             return lista[i]
         }
@@ -123,8 +125,7 @@
         function htmlOpcoesImg() {
             return `<button  class="opcoes" ><a href="https://www.rubyrosemaquiagem.com.br/produto/3159-gel-creme-facial-antioxidante-kiwi-rr5600-melu">Ver mais sobre o produto</a></button>`
         }
-
-            
+           
             //scroll do chat
             const emulatedScreen = document.querySelector('.chat');
     
