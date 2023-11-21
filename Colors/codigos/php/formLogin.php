@@ -55,6 +55,7 @@
                         <label for="senhaUser">Senha
                                 <input type="password" id="senhaUser" class="form-control" name="senhaUser" required
                                     placeholder="Digite sua senha">
+                            <a href="ems.php" style="color: rgb(190, 115, 65);">Esqueceu a senha?</a><br>
                     </div>
                     
                     
