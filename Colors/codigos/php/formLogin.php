@@ -43,7 +43,7 @@
                 <fieldset class="ladoA">
 
                     <div class="text-center">
-                        <img src="../../Imagem/Usuario.jpeg" style="width: 185px;" alt="logo">
+                        <img src="../../Imagem/userlog.png" style="width: 185px;" alt="logo">
                         <h4 class="mt-1 mb-5 pb-1" style="color: rgb(139, 85, 48);"></h4>
                     </div>
 
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="enviar text-center">
-                    <input class="btn btn-light" type="submit" name="btnSalvar" value="Login" style="background-color: rgb(241, 234, 226); color: rgb(190, 115, 65); border-radius: 12px";><br><br>
+                    <input class="btn btn-light" type="submit" name="btnSalvar" value="Login" style="background-color: rgb(255, 255, 255); color: rgb(190, 115, 65); border-radius: 12px";><br><br>
                     </div>
 
                     <div class="enviar text-center">
@@ -144,4 +144,3 @@
 </body>
 
 </html>
-
