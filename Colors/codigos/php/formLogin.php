@@ -36,42 +36,65 @@
         </div>
     </nav>
 <!--fim do cabeçalho-->
+<section class="cadastro">
+        <div class="section">
+            <form action="processa_cadastro.php" method="post">
+                <!-- lado A -->
+                <fieldset class="ladoA">
 
-<div class="text-center">
-<form action="login.php" method="post">
-<!-- lado B  -->
-<fieldset class="ladoB" text-align:"center">
-    <br>
-    <br>
-<h2>Login</h2>
-<br>
-                    <div class="form-outline mb-4">
-                        <label for="nomeUser">Email</label>
-                                <input type="text" id="emailUser" class="form-control" name="emailUser" required
-                                    placeholder="Digite seu email">
+                    <div class="text-center">
+                        <img src="../../Imagem/Usuario.jpeg" style="width: 185px;" alt="logo">
+                        <h4 class="mt-1 mb-5 pb-1" style="color: rgb(139, 85, 48);"></h4>
                     </div>
 
                     <div class="form-outline mb-4">
-                        <label for="senhaUser">Senha
-                                <input type="password" id="senhaUser" class="form-control" name="senhaUser" required
-                                    placeholder="Digite sua senha">
-                            <a href="ems.php" style="color: rgb(190, 115, 65);">Esqueceu a senha?</a><br>
+                    <label for="nomeUser">Email</label>
+                        <div class="col-sm-10">
+                        <input type="text" id="emailUser" class="form-control" name="emailUser" required
+                        placeholder="Digite seu email">
+                        </div>
                     </div>
-                    
-                    
-                        <input class="btn btn-light" type="submit" name="btnSalvar" value="Login" style="background-color: rgb(241, 234, 226); color: rgb(190, 115, 65); border-radius: 12px";><br><br>
 
-                        <br> <p>Inscreva-se para ficar por dentro de ofertas hiperlimitadas, lançamentos de produtos e dicas pessoais de beleza.</p>
-
-                    <div class="enviar text-right">
-                        <a href="cadastro.php" title="Login" style="color: rgb(190, 115, 65);">Quero fazer meu cadastro!</a><br>
+                    <div class="form-outline mb-4">
+                    <label for="senhaUser">Senha</label>
+                        <div class="col-sm-10">
+                        <input type="password" id="senhaUser" class="form-control" name="senhaUser" required
+                        placeholder="Digite sua senha">
+                        </div>
                     </div>
-                   
+
+                    <div class="enviar text-center">
+                    <input class="btn btn-light" type="submit" name="btnSalvar" value="Login" style="background-color: rgb(241, 234, 226); color: rgb(190, 115, 65); border-radius: 12px";><br><br>
+                    </div>
+
+                    <div class="enviar text-center">
+                    <a href="ems.php" style="color: rgb(190, 115, 65);">Esqueceu a senha?</a><br>
+                    </div>
+
                 </fieldset>
-               
-    
-    </form>
-</div>
+                <!-- lado B  -->
+                <fieldset class="ladoB">
+
+                    <div class="form-outline mb-4">
+                    <h4 class="mb-4">Ainda não tem uma conta?</h4>
+                  <p>Inscreva-se para ficar por dentro de ofertas hiperlimitadas, lançamentos de produtos e dicas pessoais de beleza.</p><br>
+                            </div>
+                    
+                   
+                    <div class="enviar text-center">
+                    <a href="cadastro.php" style="color: rgb(190, 115, 65);">Criar agora</a><br>
+                    </div>
+                    </div>
+                </fieldset>
+
+            </form>
+
+
+
+
+        </div>
+    </section>
+
     <footer class="main_footer">
         <div class="content">
             <div class="colfooter">
@@ -119,5 +142,6 @@
         </div>
     </footer>
 </body>
+
 </html>
 
