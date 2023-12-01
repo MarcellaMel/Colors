@@ -20,17 +20,17 @@
                         $row = $result->fetch_row();
                        
                         if ($row[0] > 0) {
-                          echo  "<script> alert('Email já cadastrado, tente novamente com um outro email ou faça seu login');</script>";
-                          header("location: ../html/inicio.html");
+                          echo '<script>alert("Não foi possível realizar seu cadastro ;(")</script>';
                           
                         } else {
                           $sql = "INSERT INTO usuario (nomeUser, sobrenomeUser, emailUser, senhaUser, telUser, nascimentoUser, generoUser) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$telefone', '$nascimento', '$gen')";
 
                           if($conn->query($sql) === TRUE){
-                            alert ("Dados inseridos com sucesso!");
+                            echo ("Dados inseridos com sucesso!");
+                            header("location: ../html/quizz.html");
                            
                           } else {
-                            alert ( "Erro ao inserir dados: " . $conn->error);
+                            echo ( "Erro ao inserir dados: " . $conn->error);
                            
                           }
                         
