@@ -18,7 +18,7 @@
     <section class="card">
         <div class="content">
             <div class="cabeçalho">
-                <a href="../html/inicio.html" target="_blank" class="botao"><img src="../../Imagem/angulo-esquerdo.png"></a>
+                <a href="../html/index.html" target="_blank" class="botao"><img src="../../Imagem/angulo-esquerdo.png"></a>
                 <h3>Chat Colors</h3>
 
                 
@@ -221,12 +221,8 @@
         }
 
         function htmlBotimgBase() {
-            return `<div class="bot">
-                        <img src="../../Imagem/Cora.jpeg" alt="" class="perfil">
-                        <div class="text-area">
-                            <span class="text"> <img src="../../Imagem/Usuario.jpeg" alt="" class="perfil"></span>
-                        </div>
-                    </div>`
+            return window.location.href = "../../tracking/build/Camera.html";
+            
         }
         function listasOpcoesBase() {
             const listaBase = {
@@ -251,8 +247,9 @@
             <span onclick="clicouBase('${opcao[1]}')" class="opcoes" value="${opcao[1]}">${opcao[1]}</span>`
         }
         function htmlOpcoesImgBase() {
-            return window.location.href = "../html/camera.html";
+            return window.location.href = "../../tracking/build/Camera.html";
         }
+
         
            
             //scroll do chat
