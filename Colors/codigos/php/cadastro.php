@@ -24,7 +24,7 @@
             <div class="mr-auto"></div>
             <ul class="navbar-nav my-2 my-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../html/inicio.html" style="color: rgb(190, 115, 65)">Início<span
+                    <a class="nav-link" href="../html/index.html" style="color: rgb(190, 115, 65)">Início<span
                             class="sr-only">(current)</span></a>
 
                 </li>
@@ -180,4 +180,3 @@
 </body>
 
 </html>
-
