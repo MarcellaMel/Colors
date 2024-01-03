@@ -118,3 +118,24 @@ span.opcoes:hover {
   border: 1px solid #ffffff;
   color: rgb(241, 234, 226);
 }
+video, canvas {
+            position: absolute;
+            border: 1px solid blue;
+        }
+
+        .color-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .color-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 5px;
+            cursor: pointer;
+            border: 2px solid white;
+            margin-right: 20px;
+           /* Transparência de 30% (ajuste conforme necessário) */
+        }
