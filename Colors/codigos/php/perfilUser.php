@@ -1,6 +1,5 @@
-<?php session_start(); ?>
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -57,7 +56,7 @@
                                         <img src="../../Imagem/userlog.png" style="width: 185px;" alt="logo">
                                         <h4 class="mt-1 mb-5 pb-1" style="color: rgb(139, 85, 48);"></h4>
 
-                                        <h4 class="mb-4"><?php echo($_SESSION["nomeUser"]);?> </h4>
+                                        <h4 class="mb-4">Nome Usuário</h4>
                                     </div>
 
                                     <form>
@@ -65,7 +64,8 @@
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="txtEmail">Alterar Email</label>
-                                            <a href="editarPessoa.php?idUser=<?php echo($_SESSION["emailUser"]) ?>" target="_blank" class="botao"><img src="../../Imagem/editarInfo.png" width="12" height="12"></a> 
+                                            <a href="editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>" target="_blank" class="botao"><img src="../../Imagem/editarInfo.png" width="12" height="12"></a> 
+
                                         </div>
 
                                         <div class="form-outline mb-4">

@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include_once("conexao.php");
 
     if(isset($_POST["nomeUser"])){
@@ -76,7 +75,6 @@
     </nav>
 
     <section class="h-100 gradient-form" style="background-color: #ffffff;">
-
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
@@ -92,19 +90,13 @@
                                     </div>
 
                                     <?php
-                                        /*if(isset($_GET["idUser"])){
+                                        if(isset($_GET["idUser"])){
 
                                             $idUser = $_GET["idUser"];
-                                            echo $idUser;
                                             $sql = "SELECT * from usuario where idUser = $idUser";
                                             $consulta = $conn->query($sql);
                                             $usuario = $consulta->fetch_assoc();
-                                        }*/
-                                        //echo $_SESSION["idUser"];
-                                       // $sql = "SELECT * from usuario where idUser = $_SESSION["idUser"]";
-                                       // $consulta = $conn->query($sql);
-                                       // $usuario = $consulta->fetch_assoc();
-                                        
+                                        }
                                     ?>
 
 
@@ -113,7 +105,7 @@
                                         <div class="form-outline mb-4">
                                             <label for="nomeUser">Nome
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="nomeUser" value="<?php echo $_SESSION["nomeUser"]?>" required
+                                                    <input type="text" class="form-control" name="nomeUser" value="<?php echo $usuario["nomeUser"]?>" required
                                                         placeholder="Digite seu nome">
                                                 </div>
                                         </div>
@@ -121,7 +113,7 @@
                                         <div class="form-group row">
                                             <label for="sobrenomeUser">Sobrenome
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="sobrenomeUser" value="<?php echo $_SESSION["sobrenomeUser"]?>"
+                                                    <input type="text" class="form-control" name="sobrenomeUser" value="<?php echo $usuario["sobrenomeUser"]?>"
                                                         required placeholder="Digite seu sobrenome">
                                                 </div>
                                         </div>
@@ -129,15 +121,15 @@
                                         <div class="form-group row">
                                             <label for="telUser">Telefone
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="telUser" value="<?php echo $_SESSION["telUser"]?>" 
-                                                    required placeholder="Digite seu telefone">
+                                                    <input type="text" class="form-control" name="telUser" value="<?php echo $usuario["telUser"]?>" required
+                                                        placeholder="Digite seu telefone">
                                                 </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="nascimentoUser">Nascimento
                                                 <div class="col-sm-10">
-                                                    <input type="number" class="form-control" name="nascimentoUser" value="<?php echo $_SESSION["nascimentoUser"]?>"
+                                                    <input type="number" class="form-control" name="nascimentoUser" value="<?php echo $usuario["nascimentoUser"]?>"
                                                         required placeholder="Digite sua data de nascimento">
                                                 </div>
 
@@ -150,13 +142,22 @@
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
 
-                                    <!--<div class="form-group row">
+
+                                    <div class="form-group row">
+                                        <label for="emailUser">Email
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="emailUser" value="<?php echo $usuario["emailUser"]?>" required
+                                                    placeholder="Digite seu email">
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group row">
                                         <label for="senhaUser">Senha
                                             <div class="col-sm-10">
-                                                <input type="password" class="form-control" name="senhaUser" value="<?php echo $_SESSION["senhaUser"]?>" required
+                                                <input type="password" class="form-control" name="senhaUser" value="<?php echo $usuario["senhaUser"]?>" required
                                                     placeholder="Digite sua senha">
                                             </div>
-                                    </div> !-->
+                                    </div>
 
                                 </div>
                                 <div class="text-right">
