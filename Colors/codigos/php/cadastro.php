@@ -37,7 +37,7 @@
     <!-- Cadastro -->
     <section class="cadastro">
         <div class="section">
-            <form action="processa_cadastro.php" method="post">
+        <form action="processa_cadastro.php" method="post">
                 <!-- lado A -->
                 <fieldset class="ladoA">
 

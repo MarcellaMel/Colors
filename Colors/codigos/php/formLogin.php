@@ -36,9 +36,9 @@
         </div>
     </nav>
 <!--fim do cabeçalho-->
-<section class="cadastro">
+<section class="login">
         <div class="section">
-            <form action="processa_cadastro.php" method="post">
+            <form action="login.php" method="post">
                 <!-- lado A -->
                 <fieldset class="ladoA">
 
