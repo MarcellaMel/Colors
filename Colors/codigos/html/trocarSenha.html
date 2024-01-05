@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trocar Senha</title>
+  <script>
+    function trocarSenha() {
+      // Obter valores dos campos
+      var senhaAntiga = document.getElementById("senhaAntiga").value;
+      var novaSenha = document.getElementById("novaSenha").value;
+      var confirmarSenha = document.getElementById("confirmarSenha").value;
+
+      // Validar se as senhas são iguais
+      if (novaSenha !== confirmarSenha) {
+        alert("As senhas não coincidem. Por favor, digite novamente.");
+        return;
+      }
+
+      // Adicione aqui lógica adicional para validar a senha antiga e a nova senha conforme necessário.
+     // UPDATE usuario SET password='novasenha' WHERE user = 'nomedousuario';
+
+      // Exemplo de lógica fictícia para troca de senha
+      alert("Senha trocada com sucesso!");
+      // Aqui você pode adicionar a lógica para enviar os dados para o servidor ou realizar outras ações necessárias.
+      $query = "UPDATE mysqli.usuario SET senhaUser = 'novaSenha' WHERE usuario = 'emailUser'";
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Trocar Senha</h2>
+
+  <form>
+    <label for="senhaAntiga">Senha Antiga:</label>
+    <input type="password" id="senhaAntiga" required>
+
+    <label for="novaSenha">Nova Senha:</label>
+    <input type="password" id="novaSenha" required>
+
+    <label for="confirmarSenha">Confirmar Nova Senha:</label>
+    <input type="password" id="confirmarSenha" required>
+
+    <button type="button" onclick="trocarSenha()">Trocar Senha</button>
+  </form>
+
+</body>
+</html>
