@@ -25,7 +25,7 @@ if ($result->num_rows == 1) {
     //echo "Login bem-sucedido. Bem-vindo,". $_SESSION["nomeUser"];
 } else {
     // Login falhou
-    echo "Login falhou. Verifique suas credenciais.";
+    header("location: ../html/loginFalhou.html");;
 }
 
 $conn->close();
