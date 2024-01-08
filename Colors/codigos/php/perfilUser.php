@@ -64,19 +64,13 @@
 
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="txtEmail">Alterar Email</label>
-                                            <a href="editarPessoa.php?idUser=<?php echo($_SESSION["emailUser"]) ?>" target="_blank" class="botao"><img src="../../Imagem/editarInfo.png" width="12" height="12"></a> 
-                                        </div>
-
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label">Alterar Celular</label>
-                                            <a href="editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>" target="_blank" class="botao"><img src="../../Imagem/editarInfo.png"
+                                            <label class="form-label">Alterar informações </label>
+                                            <a href="editarPessoa.php?idUser=<?php echo $exibir["idUser"] ?>" target = "_blank" class="botao"><img src="../../Imagem/editarInfo.png"
                                                     width="12" height="12"></a>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label">Alterar Senha </label>
-                                            <a href="..\ems.php" target="_blank" class="botao"><img
-                                                    src="../../Imagem/editarInfo.png" width="12" height="12"></a>
+                                            <a href="..\ems.php" target="_blank" class="botao"><img src="../../Imagem/editarInfo.png" width="12" height="12"></a>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label">Meus itens salvos </label>
